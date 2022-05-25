@@ -5,11 +5,13 @@ main {
 #pixel-board {
     display: flex;
     flex-wrap: wrap;
-    width: 210px;
-    height: 210px;
     margin-top: 20px;
 }
 
 #clear-board {
+    margin-top: 20px;
+}
+
+#board-size {
     margin-top: 20px;
 }
