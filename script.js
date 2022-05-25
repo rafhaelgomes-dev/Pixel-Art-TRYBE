@@ -75,3 +75,16 @@ corPreta.addEventListener("click", selecionaCor)
 corAzul.addEventListener("click", selecionaCor)
 corVerde.addEventListener("click", selecionaCor)
 corVermelha.addEventListener("click", selecionaCor)
+
+//Adicionando função para pintar pixel de acordo com a cor selecionada
+
+let pixels = document.getElementsByClassName("pixel")
+
+function pintarPixel (event) {
+    let corSelecionada = document.getElementsByClassName("selected")[0]
+    event.target.style.backgroundColor = corSelecionada.style.backgroundColor
+}
+
+for (index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener("click", pintarPixel)
+}
