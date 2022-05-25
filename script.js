@@ -52,8 +52,8 @@ let quadroDePixel = document.getElementById("pixel-board")
 for (index = 1; index <= 25; index += 1) {
     let pixel = document.createElement("div")
     pixel.style.backgroundColor ="white"
-    pixel.style.width = "50px"
-    pixel.style.height = "50px"
+    pixel.style.width = "40px"
+    pixel.style.height = "40px"
     pixel.style.border = "solid black 1px"
     pixel.className = "pixel"
     quadroDePixel.appendChild(pixel)
