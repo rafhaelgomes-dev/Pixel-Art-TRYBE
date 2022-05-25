@@ -62,3 +62,16 @@ for (index = 1; index <= 25; index += 1) {
 
 let elementoCorPreta = document.getElementsByClassName("color")[0]
 elementoCorPreta.className = "color selected"
+
+//Selecionando cores na paleta
+
+function selecionaCor (event) {
+    let classeSelected = document.getElementsByClassName("selected")[0]
+    classeSelected.classList.remove("selected")
+    event.target.className = "color selected"
+}
+
+corPreta.addEventListener("click", selecionaCor)
+corAzul.addEventListener("click", selecionaCor)
+corVerde.addEventListener("click", selecionaCor)
+corVermelha.addEventListener("click", selecionaCor)
