@@ -21,7 +21,6 @@ corAzul.className = "color"
 corVerde.className = "color"
 corVermelha.className = "color"
 
-
 //Adicionando cores, tamanho e borda na Paleta
 
 corPreta.style.backgroundColor = "black"
@@ -45,7 +44,7 @@ corVerde.style.height ="50px"
 corVerde.style.border = "1px solid black"
 
 
-//Criando 25 pixels no quadro de pixel
+//Criando 25 pixels dinâmicamente no quadro de pixel
 
 let quadroDePixel = document.getElementById("pixel-board")
 
@@ -58,3 +57,8 @@ for (index = 1; index <= 25; index += 1) {
     pixel.className = "pixel"
     quadroDePixel.appendChild(pixel)
 }
+
+//Adicionando a class selected na cor preta
+
+let elementoCorPreta = document.getElementsByClassName("color")[0]
+elementoCorPreta.className = "color selected"
