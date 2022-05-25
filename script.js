@@ -85,6 +85,22 @@ function pintarPixel (event) {
     event.target.style.backgroundColor = corSelecionada.style.backgroundColor
 }
 
+//Adicionando em cada pixel o evento e a função que iŕa pintar
 for (index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener("click", pintarPixel)
+}
+
+//Adicionando a função limpar ao botão 
+
+let botaoLimpar = document.getElementById("clear-board")
+botaoLimpar.addEventListener("click", limparPixels)
+
+function limparPixels () {
+     let classPixel = document.getElementsByClassName("pixel")
+     for(index = 0; index < classPixel.length; index +=1) {
+          
+        classPixel[index].style.backgroundColor = "white"
+
+     }
+
 }
