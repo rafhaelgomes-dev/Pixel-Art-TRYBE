@@ -139,12 +139,8 @@ function tamanhoQuadroPixels() {
       
       if(recebeValor() >= 5 && recebeValor() <= 50){
     //apagar pixels anteriores
-
        quadroDePixel.innerText = ""
-    
-     
     //  cria novos pixels
-    
      let tamanhoQuadrado = recebeValor() * recebeValor ()
 
      for (index = 1; index <= tamanhoQuadrado; index += 1) {
@@ -156,9 +152,42 @@ function tamanhoQuadroPixels() {
         pixel.className = "pixel"
         quadroDePixel.appendChild(pixel)
     }
+
     tamanhoBoard.style.width = (largura + 2) * recebeValor() +"px"
     tamanhoBoard.style.height = (altura + 2) * recebeValor() +"px"
       
+      } else if (recebeValor() < 5 && recebeValor() > 0) {
+
+        quadroDePixel.innerText = ""
+        for (index = 1; index <= 25; index += 1) {
+           let pixel = document.createElement("div")
+           pixel.style.backgroundColor ="white"
+           pixel.style.width = "40px"
+           pixel.style.height = "40px"
+           pixel.style.border = "solid black 1px"
+           pixel.className = "pixel"
+           quadroDePixel.appendChild(pixel)
+       }
+
+       tamanhoBoard.style.width = (largura + 2) * 5 +"px"
+       tamanhoBoard.style.height = (altura + 2) * 5 +"px"
+        
+      } else if (recebeValor() > 50) {
+
+        quadroDePixel.innerText = ""
+        for (index = 1; index <= 2500; index += 1) {
+            let pixel = document.createElement("div")
+            pixel.style.backgroundColor ="white"
+            pixel.style.width = "40px"
+            pixel.style.height = "40px"
+            pixel.style.border = "solid black 1px"
+            pixel.className = "pixel"
+            quadroDePixel.appendChild(pixel)
+        }
+
+        tamanhoBoard.style.width = (largura + 2) * 50 +"px"
+        tamanhoBoard.style.height = (altura + 2) * 50 +"px"
+
       } else {
           alert("Board inválido!")
       }
