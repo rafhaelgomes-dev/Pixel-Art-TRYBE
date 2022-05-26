@@ -114,85 +114,52 @@ let largura = parseInt(pixels[0].style.width)
 tamanhoBoard.style.width = (largura + 2) * 5 +"px"
 tamanhoBoard.style.height = (altura + 2) * 5 +"px"
 
-
 //Adiciona opção para a pessoa usuária escolher o tamanho dos pixels
-
-// let caixaDeTexto = document.getElementById("board-size")
-// let botaoMudarTamanho = document.getElementById("generate-board")
-
-// botaoMudarTamanho.addEventListener("click", alteraTamanhoPixel)
-// caixaDeTexto.addEventListener("input", calculoPixel)
-
-// Recebe o valor digitado no input 
-
-function calculoPixel(){
-    let recebeValor= caixaDeTexto.value
-    return recebeValor
-}
-
-
-// Função que ao clicar no botão altera tamanho do pixel
-
-// function alteraTamanhoPixel () {
-    
-//     if(calculoPixel() >= 5 && calculoPixel() <= 50){
-//         let filtraPixel = document.getElementsByClassName("pixel")
-//         for(index = 0; index <= 24; index +=1 ){
-//             quadroDePixel.removeChild(filtraPixel[0])
-//          }  
-    
-         
-     
-//         for (index = 1; index <= 25; index += 1) {   
-//             let pixel = document.createElement("div")
-//             pixel.style.backgroundColor ="white"
-//             pixel.style.width = calculoPixel() + "px"
-//            console.log( pixel.style.height = calculoPixel() + "px")
-//            pixel.style.border = "solid black 1px"
-//             pixel.className = "pixel"
-//             quadroDePixel.appendChild(pixel)
-//         }
-      
-//         let pixelBord = document.getElementById("pixel-board")
-//      let calculoPixelfinal = (parseInt(calculoPixel()) + 2) * 5
-//       pixelBord.style.width = calculoPixelfinal + "px"
-//       pixelBord.style.height = calculoPixelfinal + "px"
-//     }
-// }
 
 let caixaDeTexto = document.getElementById("board-size")
 let botaoMudarTamanho = document.getElementById("generate-board")
 
-botaoMudarTamanho.addEventListener("click", alteraTamanhoPixel)
-caixaDeTexto.addEventListener("input", calculoPixel)
+botaoMudarTamanho.addEventListener("click", tamanhoQuadroPixels)
+caixaDeTexto.addEventListener("input", recebeValor)
 
 // Recebe o valor digitado no input 
 
-function calculoPixel(){
-    let recebeValor= caixaDeTexto.value
-    return recebeValor
+function recebeValor(){
+    let valor= caixaDeTexto.value
+    console.log(valor)
+    return valor
+  
 }
 
-//Função que ao clicar no botão altera tamanho do pixel
 
-function alteraTamanhoPixel () {
+let nodeList = quadroDePixel.children
+function tamanhoQuadroPixels() {
     
-    if(calculoPixel() >= 5 && calculoPixel() <= 50){
-    for (index = 0; index < pixels.length; index +=1) {
-       pixels[index].style.width = calculoPixel() + "px"
-       pixels[index].style.height = calculoPixel() + "px"
+      
+      
+      if(recebeValor() >= 5 && recebeValor() <= 50){
+    //apagar pixels anteriores
+
+       quadroDePixel.innerText = ""
+    
+     
+    //  cria novos pixels
+    
+     let tamanhoQuadrado = recebeValor() * recebeValor ()
+
+     for (index = 1; index <= tamanhoQuadrado; index += 1) {
+        let pixel = document.createElement("div")
+        pixel.style.backgroundColor ="white"
+        pixel.style.width = "40px"
+        pixel.style.height = "40px"
+        pixel.style.border = "solid black 1px"
+        pixel.className = "pixel"
+        quadroDePixel.appendChild(pixel)
     }
-      let pixelBord = document.getElementById("pixel-board")
-     let calculoPixelfinal = (parseInt(calculoPixel()) + 2) * 5
-      pixelBord.style.width = calculoPixelfinal + "px"
-      pixelBord.style.height = calculoPixelfinal + "px"
-
-      for(index = 0; index < classPixel.length; index +=1) {
-          
-        classPixel[index].style.backgroundColor = "white"
-     }
-
- } else {
-     alert ("Board inválido!")
- }
-}
+    tamanhoBoard.style.width = (largura + 2) * recebeValor() +"px"
+    tamanhoBoard.style.height = (altura + 2) * recebeValor() +"px"
+      
+      } else {
+          alert("Board inválido!")
+      }
+   }
