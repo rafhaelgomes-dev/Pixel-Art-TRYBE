@@ -21,6 +21,20 @@ corAzul.className = "color"
 corVerde.className = "color"
 corVermelha.className = "color"
 
+
+//Gerando Cores aleatórias
+function gerarCorAleatoria() {
+    let numeroseLetrasPossiveis = '0123456789ABCDEF';
+    let codigoCorHexadecimal = '#';
+    
+    for (let i = 0; i < 6; i++) {
+        codigoCorHexadecimal = codigoCorHexadecimal + numeroseLetrasPossiveis[Math.floor(Math.random() * 16)];
+    }
+    
+    return codigoCorHexadecimal;
+    
+  }
+ 
 //Adicionando cores, tamanho e borda na Paleta
 
 corPreta.style.backgroundColor = "black"
@@ -28,17 +42,17 @@ corPreta.style.width = "50px"
 corPreta.style.height ="50px"
 corPreta.style.border = "1px solid black"
 
-corAzul.style.backgroundColor = "blue"
+corAzul.style.backgroundColor = gerarCorAleatoria()
 corAzul.style.width = "50px"
 corAzul.style.height ="50px"
 corAzul.style.border = "1px solid black"
 
-corVermelha.style.backgroundColor = "red"
+corVermelha.style.backgroundColor = gerarCorAleatoria()
 corVermelha.style.width = "50px"
 corVermelha.style.height ="50px"
 corVermelha.style.border = "1px solid black"
 
-corVerde.style.backgroundColor = "green"
+corVerde.style.backgroundColor = gerarCorAleatoria()
 corVerde.style.width = "50px"
 corVerde.style.height ="50px"
 corVerde.style.border = "1px solid black"
