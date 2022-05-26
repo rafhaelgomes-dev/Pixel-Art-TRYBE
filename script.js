@@ -169,7 +169,11 @@ function tamanhoQuadroPixels() {
 
     tamanhoBoard.style.width = (largura + 2) * recebeValor() +"px"
     tamanhoBoard.style.height = (altura + 2) * recebeValor() +"px"
-      
+    
+    for (index = 0; index < pixels.length; index += 1) {
+        pixels[index].addEventListener("click", pintarPixel)
+    }
+
       } else if (recebeValor() < 5 && recebeValor() > 0) {
 
         quadroDePixel.innerText = ""
@@ -185,7 +189,9 @@ function tamanhoQuadroPixels() {
 
        tamanhoBoard.style.width = (largura + 2) * 5 +"px"
        tamanhoBoard.style.height = (altura + 2) * 5 +"px"
-        
+       for (index = 0; index < pixels.length; index += 1) {
+        pixels[index].addEventListener("click", pintarPixel)
+    }
       } else if (recebeValor() > 50) {
 
         quadroDePixel.innerText = ""
@@ -201,7 +207,9 @@ function tamanhoQuadroPixels() {
 
         tamanhoBoard.style.width = (largura + 2) * 50 +"px"
         tamanhoBoard.style.height = (altura + 2) * 50 +"px"
-
+        for (index = 0; index < pixels.length; index += 1) {
+            pixels[index].addEventListener("click", pintarPixel)
+        }
       } else {
           alert("Board inválido!")
       }
